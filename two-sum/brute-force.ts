@@ -20,18 +20,28 @@ Input: nums = [3,3], target = 6
 Output: [0,1]
 */
 
-const numss = [7,11,15,6,2]
-const targett = 9
+const nums = [11,15,6,7,2] as number[]
+const target = 30 as number
 
 function twoSum(nums: number[], target: number): number[] {
-  // what | how | why,
+  // what | how | why
   // 1. loop through array | for loop | first thing that came to mind, will work on efficiency after
   // 2. loop through array again to compare two indexes | nested for loop | first thing that came to mind, will work on efficiency after
   // 3. if the addition of two numbers === target, then return answer | if statement
   let answer: number[] = [];
+
+  // error handling 
+  // !nums checks whether num is falsy or undefined
+  // need to be !nums before nums.length <= 0
+  if (!nums || nums.length <= 0) {
+    return []
+  }
+
   for (let i = 0; i < nums.length; i++) {
-    for (let j = 1; j < nums.length; j++) {
-      if (nums[i] + nums[j] === target) {
+    for (let j = i+1; j < nums.length; j++) {
+      const current = nums[i]
+      const compare = nums[j]
+      if (current + compare === target) {
         answer = [i, j]
       }
     }
@@ -39,4 +49,4 @@ function twoSum(nums: number[], target: number): number[] {
   return answer
 };
 
-console.log(twoSum(numss, targett))
+console.log(twoSum(nums, target))
