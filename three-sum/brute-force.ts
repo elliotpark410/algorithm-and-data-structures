@@ -38,10 +38,6 @@ Constraints:
 
 // PSEUDOCODE
 // what | how | why
-// 0. initialize solutionArray = []
-// 1. loop through array | for loop | first thing that came to mind, will work on efficiency after
-// 2. if nums[i] + nums[j] + nums[k] === 0 && i != j, i != k, and j != k && [nums[i],nums[j], nums[k]] in any combination does not already match another array in solutionArray, then push to solutionArray
-// 3.return solutionArray
 
 const nums1: number[] = [-1,0,1,2,-1,-4]
 const nums2: number[] = [0,1,1]
